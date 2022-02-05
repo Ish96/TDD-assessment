@@ -40,4 +40,11 @@ public class SimpleCalculatorTest {
         int expectedResult = 6;
         assertEquals(expectedResult,actualResult,"String with new line will return 6");
     }
+
+    @Test
+    public void testStringWithDelimiter(){
+        int actualResult = simpleCalculator.Add("//;\n1;2");
+        int expectedResult = 3;
+        assertEquals(expectedResult,actualResult,"String with delimiter will return 3");
+    }
 }
