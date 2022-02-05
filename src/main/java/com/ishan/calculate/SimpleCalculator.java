@@ -16,12 +16,12 @@ public class SimpleCalculator {
             delimiter = remain.substring(2,3);
             remain = remain.substring(4);
         }
-        String s[] = remain.split("["+delimiter+"\n]");
+        String s[] = remain.split("[\n"+delimiter+"]");
         List<Integer> nums = Arrays.stream(s).map(s2 -> {
             try {
                 return Integer.parseInt(s2);
             } catch (Exception e) {
-                throw new RuntimeException("Not valid String");
+                throw new RuntimeException("Input is NOT ok");
             }
         }).collect(Collectors.toList());
         List<Integer> negativeNums = nums.stream().filter(n1 -> n1 < 0).collect(Collectors.toList());

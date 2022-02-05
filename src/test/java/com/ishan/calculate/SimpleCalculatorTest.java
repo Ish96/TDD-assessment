@@ -53,4 +53,10 @@ public class SimpleCalculatorTest {
         RuntimeException exception = assertThrows(RuntimeException.class, ()->simpleCalculator.Add("-1\n-22,3"));
         assertEquals("negatives not allowed -1,-22",exception.getMessage());
     }
+
+    @Test
+    public void testStringNotValid(){
+        RuntimeException exception = assertThrows(RuntimeException.class, ()->simpleCalculator.Add("1,\n,2"));
+        assertEquals("Input is NOT ok",exception.getMessage());
+    }
 }
