@@ -19,4 +19,11 @@ public class SimpleCalculatorTest {
         int expectedResult = 0;
         assertEquals(expectedResult, actualResult, "Empty string for Add method return 0");
     }
+
+    @Test
+    public void TestStringWithTwoNumbers(){
+        int actualResult = simpleCalculator.Add("1,2");
+        int expectedResult = 3;
+        assertEquals(expectedResult,actualResult, "String 1,2 for Add method will return 3");
+    }
 }
