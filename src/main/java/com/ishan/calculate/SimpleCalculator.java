@@ -8,7 +8,13 @@ public class SimpleCalculator {
         if(numbers.equals("")){
             return 0;
         }
-        String s[] = numbers.split("[,\n]");
+        String delimiter = ",";
+        String remain = numbers.trim();
+        if(numbers.startsWith("//")){
+            delimiter = remain.substring(2,3);
+            remain = remain.substring(4);
+        }
+        String s[] = remain.split("["+delimiter+"\n]");
         int sum = Arrays.stream(s).mapToInt(Integer::parseInt).sum();
         return sum;
     }
