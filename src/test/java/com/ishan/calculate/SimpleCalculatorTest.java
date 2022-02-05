@@ -26,4 +26,11 @@ public class SimpleCalculatorTest {
         int expectedResult = 3;
         assertEquals(expectedResult,actualResult, "String 1,2 for Add method will return 3");
     }
+
+    @Test
+    public void testStringWithUnknownAmountOfNumbers(){
+        int actualResult = simpleCalculator.Add("1,2,3,4,5,6,7,8,9,10");
+        int expectedResult = 55;
+        assertEquals(expectedResult,actualResult,"String with 1 to 10 will return 55");
+    }
 }
