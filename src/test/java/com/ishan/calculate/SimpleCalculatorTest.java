@@ -33,4 +33,11 @@ public class SimpleCalculatorTest {
         int expectedResult = 55;
         assertEquals(expectedResult,actualResult,"String with 1 to 10 will return 55");
     }
+
+    @Test
+    public void testStringWithNewLine(){
+        int actualResult = simpleCalculator.Add("1\n2,3");
+        int expectedResult = 6;
+        assertEquals(expectedResult,actualResult,"String with new line will return 6");
+    }
 }
