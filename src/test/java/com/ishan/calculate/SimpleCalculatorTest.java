@@ -47,4 +47,10 @@ public class SimpleCalculatorTest {
         int expectedResult = 3;
         assertEquals(expectedResult,actualResult,"String with delimiter will return 3");
     }
+
+    @Test
+    public void testStringWithNegativeNumbers(){
+        RuntimeException exception = assertThrows(RuntimeException.class, ()->simpleCalculator.Add("-1\n-22,3"));
+        assertEquals("negatives not allowed -1,-22",exception.getMessage());
+    }
 }
