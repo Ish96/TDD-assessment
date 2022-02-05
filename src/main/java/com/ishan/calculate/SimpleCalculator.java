@@ -1,8 +1,15 @@
 package com.ishan.calculate;
 
+import java.util.Arrays;
+
 public class SimpleCalculator {
 
     public int Add(String numbers){
-        return 0;
+        if(numbers.equals("")){
+            return 0;
+        }
+        String s[] = numbers.split(",");
+        int sum = Arrays.stream(s).mapToInt(Integer::parseInt).sum();
+        return sum;
     }
 }

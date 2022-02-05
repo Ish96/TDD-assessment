@@ -9,19 +9,19 @@ public class SimpleCalculatorTest {
     private SimpleCalculator simpleCalculator;
 
     @BeforeEach
-    public void InitSimpleCalculator(){
+    public void initSimpleCalculator(){
         simpleCalculator = new SimpleCalculator();
     }
 
     @Test
-    public void TestEmptyString(){
+    public void testEmptyString(){
         int actualResult = simpleCalculator.Add("");
         int expectedResult = 0;
-        assertEquals(expectedResult, actualResult, "Empty string for Add method return 0");
+        assertEquals(expectedResult, actualResult, "Empty string for Add method will return 0");
     }
 
     @Test
-    public void TestStringWithTwoNumbers(){
+    public void testStringWithTwoNumbers(){
         int actualResult = simpleCalculator.Add("1,2");
         int expectedResult = 3;
         assertEquals(expectedResult,actualResult, "String 1,2 for Add method will return 3");
